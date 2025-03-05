@@ -1,5 +1,4 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <header>
@@ -8,7 +7,7 @@
   </header>
 </template>
 
-<style scoped>   
+<style scoped>
 header {
   text-align: center;
   margin-top: 50px;
