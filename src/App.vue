@@ -9,5 +9,6 @@ export default {
 </script>
 
 <template>
-    <button @click="show">Показать дату</button>
+    <button @click="show">Показать дату при нажатии</button>
+    <button @mouseover="show">Показать дату при наведении</button>
 </template>
