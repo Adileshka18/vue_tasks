@@ -1,17 +1,16 @@
+<template>
+  <div>
+    <button @click="showCurrentDate">Показать текущую дату</button>
+  </div>
+</template>
+
 <script>
 export default {
-
-data() {
-	return {
-		obj: {x: 1, y: 2, z: 3},
-	}
+  methods: {
+    showCurrentDate() {
+      const currentDate = new Date();
+      alert(`Текущая дата: ${currentDate.toLocaleString()}`);
+    }
+  }
 }
-
-};
 </script>
-
-
-<template>
-	{{ obj.x + obj.y + obj.z}}
-	
-</template>
