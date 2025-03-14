@@ -2,8 +2,10 @@
 export default {
   data() {
 	return {
-		text: 'page',
-		href: 'page.html',
+		num: 5,
+        num1: 1,
+		num2: 2,
+		num3: 3,
 	}
 }
 };
@@ -11,5 +13,6 @@ export default {
 
 
 <template>
-  <a :href="href">{{ text }}</a>
+	<p>{{ num * num }}</p>
+    <p>{{ num1 + num2 + num3 }}</p>
 </template>
