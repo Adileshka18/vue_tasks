@@ -1,18 +1,20 @@
 <script>
 export default {
-  data() {
+
+data() {
 	return {
-		num: 5,
-        num1: 1,
-		num2: 2,
-		num3: 3,
+		arr: ['x', 'y', 'z'],
+        arr1: [1, 2, 3],
 	}
 }
+
 };
 </script>
 
 
 <template>
-	<p>{{ num * num }}</p>
-    <p>{{ num1 + num2 + num3 }}</p>
+	<p>{{ arr[0] }}</p>
+	<p>{{ arr[1] }}</p>
+	<p>{{ arr[2] }}</p>
+    <p>{{ arr1[0] + arr1[1] + arr1[2]}}</p>
 </template>
