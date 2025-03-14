@@ -1,17 +1,15 @@
 <script>
 export default {
   data() {
-    return {
-      name: 'John',
-      surn: 'Smit'
-    };
-  }
+	return {
+		text: 'page',
+		href: 'page.html',
+	}
+}
 };
 </script>
 
 
 <template>
-  <div>{{ name }}</div>
-  <div>{{ surn }}</div>
+  <a :href="href">{{ text }}</a>
 </template>
-
