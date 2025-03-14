@@ -2,7 +2,7 @@
 
 <template>
   <header>
-    <h1>Добро пожаловать в Vue!</h1>
+    <h1>Адилешка приветствует вас в Vue!</h1>
     <p></p>
   </header>
 </template>
