@@ -1,19 +1,21 @@
 <script>
 export default {
     data() {
-        return {
-            num1: 1,
-            num2: 2,
-        };
+        
     },
     methods: {
         show() {
-            alert(this.num1 + this.num2);
+            let day = this.getDayOfWeek(new Date().getDay());
+            alert(day);
+        },
+        getDayOfWeek(num) {
+            const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+            return days[num] || "Некорректное число";
         }
     }
 }
 </script>
 
 <template>
-    <button @click="show">Показать сумму</button>
+    <button @click="show">Показать день недели</button>
 </template>
