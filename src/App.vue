@@ -2,22 +2,28 @@
 export default {
     data() {
         return {
-            text: 'xxx',
+            cost: 100,
+            amount: 2,
         };
+    }, 
+
+    computed: {
+        price() {
+            return this.cost * this.amount;
+        }
     },
+
     methods: {
-        changeToYYY() {
-            this.text = 'yyy';
-        },
-        changeToZZZ() {
-            this.text = 'zzz';
+        changeCost() {
+            this.cost += 50;
         }
     }
 }
 </script>
 
 <template>
-    {{ text }}
-    <button @click="changeToYYY">Изменить на yyy</button>
-    <button @click="changeToZZZ">Изменить на zzz</button>
+    <p>Цена: {{ cost }}</p>
+    <p>Количество: {{ amount }}</p>
+    <p>Полная стоимость: {{ price }}</p>
+    <button @click="changeCost">Изменить цену</button>
 </template>
