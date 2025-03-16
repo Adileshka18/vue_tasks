@@ -1,14 +1,23 @@
 <script>
 export default {
+    data() {
+        return {
+            text: 'xxx',
+        };
+    },
     methods: {
-        showSquare(num) {
-            alert(num * num);
+        changeToYYY() {
+            this.text = 'yyy';
+        },
+        changeToZZZ() {
+            this.text = 'zzz';
         }
     }
 }
 </script>
 
 <template>
-    <button @click="showSquare(2)">Показать квадрат 2</button>
-    <button @click="showSquare(3)">Показать квадрат 3</button>
+    {{ text }}
+    <button @click="changeToYYY">Изменить на yyy</button>
+    <button @click="changeToZZZ">Изменить на zzz</button>
 </template>
