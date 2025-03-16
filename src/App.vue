@@ -2,12 +2,23 @@
 export default {
   data() {
     return {
-      hidden: false
+      visible: true,
     };
+  },
+
+  methods: {
+    show() {
+      this.visible = true;
+    },
+    hide() {
+      this.visible = false;
+    }
   }
 };
 </script>
 
 <template>
-  <p v-if="!hidden">text</p>
+  <button v-if="!visible" @click="show">Показать</button>
+  <button v-if="visible" @click="hide">Скрыть</button>
+  <p v-if="visible">text</p>
 </template>
