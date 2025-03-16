@@ -1,21 +1,14 @@
 <script>
 export default {
-    data() {
-        
-    },
     methods: {
-        show() {
-            let day = this.getDayOfWeek(new Date().getDay());
-            alert(day);
-        },
-        getDayOfWeek(num) {
-            const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
-            return days[num] || "Некорректное число";
+        showSquare(num) {
+            alert(num * num);
         }
     }
 }
 </script>
 
 <template>
-    <button @click="show">Показать день недели</button>
+    <button @click="showSquare(2)">Показать квадрат 2</button>
+    <button @click="showSquare(3)">Показать квадрат 3</button>
 </template>
