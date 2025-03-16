@@ -1,29 +1,32 @@
-<script>
-export default {
-    data() {
-        return {
-            cost: 100,
-            amount: 2,
-        };
-    }, 
+<script setup>
+import { ref } from 'vue';
 
-    computed: {
-        price() {
-            return this.cost * this.amount;
-        }
-    },
+const visible = ref(true);
 
-    methods: {
-        changeCost() {
-            this.cost += 50;
-        }
-    }
-}
+// Функция для предотвращения перехода по ссылке
+const preventNavigation = (event) => {
+  event.preventDefault();
+};
+
+// Функция для обработки клика по кнопке (только первый клик)
+const clicked = ref(false);
+const handleClickOnce = () => {
+  if (!clicked.value) {
+    clicked.value = true;
+    console.log('Кнопка нажата один раз');
+  }
+};
 </script>
 
 <template>
-    <p>Цена: {{ cost }}</p>
-    <p>Количество: {{ amount }}</p>
-    <p>Полная стоимость: {{ price }}</p>
-    <button @click="changeCost">Изменить цену</button>
+  <div>
+    <h1>Task#16</h1>
+    <a href="https://example.com" @click.prevent="preventNavigation">Запрещенная ссылка</a>
+    <br />
+    <button @click.once="handleClickOnce">Кликни один раз</button>
+    <br />
+    <h1>Task#17</h1>
+    <p v-if="visible">Этот абзац виден, если visible = true</p>
+    <p v-if="!visible">Этот абзац виден, если visible = false</p>
+  </div>
 </template>
