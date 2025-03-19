@@ -11,10 +11,6 @@ export default {
 <template>
   <div>
     <button @click="isAuth = !isAuth">Toggle</button>
-    <template v-if="isAuth">
-      <p>+++</p>
-      <p>+++</p>
-      <p>+++</p>
-    </template>
+    <p v-show="isAuth">+++</p>
   </div>
 </template>
