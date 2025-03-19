@@ -2,16 +2,19 @@
 export default {
   data() {
     return {
-      age: 25
+      isAuth: true,
     };
-  }
-}
+  },
+};
 </script>
 
 <template>
   <div>
-    <p v-if="age < 18">Подросток</p>
-    <p v-else-if="age >= 19 && age <= 25">Молодой человек</p>
-    <p v-else>Мужчина</p>
+    <button @click="isAuth = !isAuth">Toggle</button>
+    <template v-if="isAuth">
+      <p>+++</p>
+      <p>+++</p>
+      <p>+++</p>
+    </template>
   </div>
 </template>
