@@ -2,20 +2,16 @@
 export default {
   data() {
     return {
-      day: new Date().getDay(), // Получаем текущий день недели (0 - воскресенье, 6 - суббота)
+      age: 25
     };
-  },
-};
+  }
+}
 </script>
 
 <template>
   <div>
-    <p v-if="day === 0">Sunday</p>
-    <p v-if="day === 1">Monday</p>
-    <p v-if="day === 2">Tuesday</p>
-    <p v-if="day === 3">Wednesday</p>
-    <p v-if="day === 4">Thursday</p>
-    <p v-if="day === 5">Friday</p>
-    <p v-if="day === 6">Saturday</p>
+    <p v-if="age < 18">Подросток</p>
+    <p v-else-if="age >= 19 && age <= 25">Молодой человек</p>
+    <p v-else>Мужчина</p>
   </div>
 </template>
