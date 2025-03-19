@@ -2,15 +2,14 @@
 export default {
   data() {
     return {
-      isAuth: true,
+      items: [1, 2, 3, 4, 5],
     };
   },
 };
 </script>
 
 <template>
-  <div>
-    <button @click="isAuth = !isAuth">Toggle</button>
-    <p v-show="isAuth">+++</p>
-  </div>
+  <ul>
+    <li v-for="elem in items" :key="elem">{{ elem* elem }}</li>
+  </ul>
 </template>
