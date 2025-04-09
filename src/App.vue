@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p :class="cssClasses">Это абзац с динамическими классами.</p>
+    <p :class="obj">Этот абзац будет иметь классы в зависимости от значений в объекте.</p>
   </div>
 </template>
 
@@ -8,22 +8,21 @@
 export default {
   data() {
     return {
-      cssClasses: ['class1', 'class2', 'class3']
+      obj: {
+        done: true,
+        selected: false,
+      },
     };
-  }
+  },
 };
 </script>
 
 <style scoped>
-.class1 {
-  color: red;
+.done {
+  color: green;
 }
 
-.class2 {
-  font-weight: bold;
-}
-
-.class3 {
-  font-size: 20px;
+.selected {
+  background-color: yellow;
 }
 </style>
