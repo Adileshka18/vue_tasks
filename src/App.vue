@@ -1,16 +1,7 @@
 <template>
   <div>
-    <!-- Задание 1: Применение объекта с классами для скрытия элемента -->
-    <p :class="obj">Этот абзац будет скрыт, если obj.hidden == true</p>
-
-    <!-- Задание 2: Кнопка для показа элемента -->
-    <button @click="showElement">Показать элемент</button>
-
-    <!-- Задание 3: Кнопка для скрытия элемента -->
-    <button @click="hideElement">Скрыть элемент</button>
-
-    <!-- Задание 4: Кнопка для тогглирования видимости элемента -->
-    <button @click="toggleElement">Тогглить элемент</button>
+    
+    <p :class="cssClasses">Этот абзац будет иметь классы active и valid в зависимости от значений в объекте.</p>
   </div>
 </template>
 
@@ -18,27 +9,22 @@
 export default {
   data() {
     return {
-      obj: {
-        hidden: true,  
+      
+      cssClasses: {
+        active: true,
+        valid: false,
       },
     };
-  },
-  methods: {
-    showElement() {
-      this.obj.hidden = false;  
-    },
-    hideElement() {
-      this.obj.hidden = true;   
-    },
-    toggleElement() {
-      this.obj.hidden = !this.obj.hidden;  
-    },
   },
 };
 </script>
 
 <style scoped>
-.hidden {
-  display: none; 
+.active {
+  color: green;
+}
+
+.valid {
+  font-weight: bold;
 }
 </style>
