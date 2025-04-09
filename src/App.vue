@@ -1,7 +1,8 @@
 <template>
   <div>
-    
-    <p :class="cssClasses">Этот абзац будет иметь классы active и valid в зависимости от значений в объекте.</p>
+    <button :class="{ valid: isValid, disabled: isDisabled }">
+      Кнопка
+    </button>
   </div>
 </template>
 
@@ -9,22 +10,22 @@
 export default {
   data() {
     return {
-      
-      cssClasses: {
-        active: true,
-        valid: false,
-      },
+      isValid: true,
+      isDisabled: true,
     };
   },
 };
 </script>
 
 <style scoped>
-.active {
-  color: green;
+.valid {
+  background-color: green;
+  color: white;
 }
 
-.valid {
-  font-weight: bold;
+.disabled {
+  background-color: gray;
+  color: darkgray;
+  pointer-events: none;
 }
 </style>
