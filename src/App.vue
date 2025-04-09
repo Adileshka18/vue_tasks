@@ -1,31 +1,41 @@
-<!-- Employee.vue -->
 <template>
-  <tr>
-    <td>{{ employee.name }}</td>
-    <td>{{ employee.salary }}</td>
-    <td>{{ employee.age }}</td>
-    <td>
-      <a href="#" @click="removeEmployee">Delete</a>
-    </td>
-    <td>
-      <a href="#" @click="editEmployee">Edit</a>
-    </td>
-  </tr>
+  <div>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <employee
+          v-for="user in users"
+          :key="user.id"
+          :name="user.name"
+          :surname="user.surname"
+          :age="user.age"
+        />
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script>
+import Employee from './components/Employee.vue';
+
 export default {
-  props: {
-    employee: Object,
-    index: Number,
+  components: {
+    Employee,
   },
-  methods: {
-    removeEmployee() {
-      this.$emit('remove', this.index);
-    },
-    editEmployee() {
-      this.$emit('edit', this.index);
-    },
+  data() {
+    return {
+      users: [
+        { id: 1, name: 'John', surname: 'Doe', age: 30 },
+        { id: 2, name: 'Jane', surname: 'Smith', age: 40 },
+        { id: 3, name: 'Jake', surname: 'Johnson', age: 50 },
+      ],
+    };
   },
 };
 </script>
