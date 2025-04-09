@@ -2,25 +2,23 @@
   <div>
     <!-- Задание 1 -->
     <label>
-      <input type="checkbox" value="English" v-model="languages"> English
+      <input type="radio" value="English" v-model="nativeLanguage"> English
     </label>
     <label>
-      <input type="checkbox" value="Spanish" v-model="languages"> Spanish
+      <input type="radio" value="Spanish" v-model="nativeLanguage"> Spanish
     </label>
     <label>
-      <input type="checkbox" value="French" v-model="languages"> French
-    </label>
-    <label>
-      <input type="checkbox" value="German" v-model="languages"> German
-    </label>
-    <label>
-      <input type="checkbox" value="Russian" v-model="languages"> Russian
+      <input type="radio" value="French" v-model="nativeLanguage"> French
     </label>
 
+    <p>Выбранный язык: {{ nativeLanguage }}</p>
+
     <!-- Задание 2 -->
-    <ul>
-      <li v-for="(language, index) in languages" :key="index">{{ language }}</li>
-    </ul>
+    <div>
+      <p v-if="nativeLanguage === 'English'">Hello!</p>
+      <p v-if="nativeLanguage === 'Spanish'">¡Hola!</p>
+      <p v-if="nativeLanguage === 'French'">Bonjour!</p>
+    </div>
   </div>
 </template>
 
@@ -28,7 +26,7 @@
 export default {
   data() {
     return {
-      languages: [],
+      nativeLanguage: '',
     };
   },
 };
