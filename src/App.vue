@@ -1,26 +1,26 @@
 <template>
   <div>
-    <p class="green-text-yellow-background">Текст с зеленым цветом и желтым фоном</p>
-    <p class="bold-italic-text">Текст жирный и курсивный</p>
+    <!-- Задание 1 -->
+    <input v-model="text" type="text" placeholder="Введите текст">
+    <p>{{ text }}</p>
+
+    <!-- Задание 2 -->
+    <input v-model="text" type="text" placeholder="Введите текст">
+    <p>{{ text.toUpperCase() }}</p>
+
+    <!-- Задание 3 -->
+    <input v-model.number="number" type="number" placeholder="Введите число">
+    <p>{{ number * number }}</p>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      text: '',
+      number: 0,
+    };
   },
 };
 </script>
-
-<style scoped>
-.green-text-yellow-background {
-  color: green;
-  background-color: yellow;
-}
-
-.bold-italic-text {
-  font-weight: bold;
-  font-style: italic;
-}
-</style>
