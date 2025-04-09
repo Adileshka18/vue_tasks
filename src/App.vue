@@ -2,14 +2,18 @@
 export default {
   data() {
     return {
-      count: 30
+		items: [1, -2, 3, -4, 5],
     };
   },
 };
 </script>
 
 <template>
-  <p v-for="num in count" :key="num">
-    {{ num }}
-  </p>
+	<ul>
+		<template v-for="elem in items">
+			<li v-if="elem > 0">
+				{{ elem }}
+			</li>
+		</template>
+	</ul>
 </template>
