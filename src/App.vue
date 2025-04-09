@@ -1,31 +1,26 @@
 <template>
   <div>
-    <button :class="{ valid: isValid, disabled: isDisabled }">
-      Кнопка
-    </button>
+    <p class="green-text-yellow-background">Текст с зеленым цветом и желтым фоном</p>
+    <p class="bold-italic-text">Текст жирный и курсивный</p>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      isValid: true,
-      isDisabled: true,
-    };
+    return {};
   },
 };
 </script>
 
 <style scoped>
-.valid {
-  background-color: green;
-  color: white;
+.green-text-yellow-background {
+  color: green;
+  background-color: yellow;
 }
 
-.disabled {
-  background-color: gray;
-  color: darkgray;
-  pointer-events: none;
+.bold-italic-text {
+  font-weight: bold;
+  font-style: italic;
 }
 </style>
