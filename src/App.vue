@@ -1,30 +1,14 @@
 <template>
   <div>
-    <Employee 
-      :worker="worker" 
-      :sendData="sendData" 
-    />
+    <button @click="emitEvent">Click me</button>
   </div>
 </template>
 
 <script>
-import Employee from './Employee.vue';
-
 export default {
-  components: {
-    Employee
-  },
-  data() {
-    return {
-      worker: {
-        name: 'John',
-        salary: 5000
-      }
-    };
-  },
   methods: {
-    sendData(name) {
-      console.log(name);
+    emitEvent() {
+      this.$emit('customEvent', 'Event data');
     }
   }
 };
