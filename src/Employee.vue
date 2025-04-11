@@ -1,16 +1,23 @@
 <!-- Employee.vue -->
 <template>
     <div>
-      <button @click="sendWorkerData(worker.name)">Send Name</button>
+      <p>Name: {{ name }}</p>
+      <p>Salary: {{ salary }}</p>
+      <p>Age: {{ age }}</p>
+      <button @click="remove">Remove</button>
     </div>
   </template>
   
   <script>
   export default {
-    props: ['worker', 'sendData'],
+    props: {
+      name: String,
+      salary: Number,
+      age: Number
+    },
     methods: {
-      sendWorkerData(name) {
-        this.sendData(name);
+      remove() {
+        this.$emit('remove');
       }
     }
   };
