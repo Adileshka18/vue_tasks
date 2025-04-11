@@ -1,13 +1,17 @@
+<!-- Employee.vue -->
 <template>
     <div>
-      <p>Name: {{ name }}</p>
-      <p>Salary: {{ salary }}</p>
-      <p>Age: {{ age }}</p>
+      <button @click="sendWorkerData(worker.name)">Send Name</button>
     </div>
   </template>
   
   <script>
   export default {
-    props: ['name', 'salary', 'age']
+    props: ['worker', 'sendData'],
+    methods: {
+      sendWorkerData(name) {
+        this.sendData(name);
+      }
+    }
   };
   </script>

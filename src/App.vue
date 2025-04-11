@@ -1,25 +1,30 @@
 <template>
   <div>
-    <ChildComponent 
-      :function1="function1" 
-      :function2="function2" 
+    <Employee 
+      :worker="worker" 
+      :sendData="sendData" 
     />
   </div>
 </template>
 
 <script>
-import ChildComponent from './ChildComponent.vue';
+import Employee from './Employee.vue';
 
 export default {
   components: {
-    ChildComponent
+    Employee
+  },
+  data() {
+    return {
+      worker: {
+        name: 'John',
+        salary: 5000
+      }
+    };
   },
   methods: {
-    function1() {
-      alert("Function 1 called!");
-    },
-    function2() {
-      alert("Function 2 called!");
+    sendData(name) {
+      console.log(name);
     }
   }
 };
