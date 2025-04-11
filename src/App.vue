@@ -1,24 +1,22 @@
 <template>
   <div>
-    <ul>
-      <li v-for="(item, index) in items" :key="index">{{ item }}</li>
-    </ul>
+    <Employee :name="name" :salary="salary" :age="age" />
   </div>
 </template>
 
 <script>
+import Employee from './Employee.vue';
+
 export default {
+  components: {
+    Employee
+  },
   data() {
     return {
-      items: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'],
+      name: 'John Doe',
+      salary: 5000,
+      age: 30
     };
-  },
+  }
 };
 </script>
-
-<style>
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-</style>
