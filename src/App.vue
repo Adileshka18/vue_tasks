@@ -7,6 +7,7 @@
       :salary="user.salary"
       :age="user.age"
       @remove="removeUser(index)"
+      @edit="editUser(index)"
     />
   </div>
 </template>
@@ -45,6 +46,16 @@ export default {
   methods: {
     removeUser(index) {
       this.users.splice(index, 1);
+    },
+    editUser(index) {
+      const user = this.users[index];
+      const newName = prompt('Edit name:', user.name);
+      const newSalary = prompt('Edit salary:', user.salary);
+      const newAge = prompt('Edit age:', user.age);
+
+      if (newName !== null) user.name = newName;
+      if (newSalary !== null) user.salary = parseFloat(newSalary);
+      if (newAge !== null) user.age = parseInt(newAge);
     }
   }
 };
