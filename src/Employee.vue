@@ -1,17 +1,13 @@
 <template>
-  <tr>
-    <td>{{ name }}</td>
-    <td>{{ surname }}</td>
-    <td>{{ age }}</td>
-  </tr>
-</template>
-
-<script>
-export default {
-  props: {
-    name: String,
-    surname: String,
-    age: Number
-  }
-}
-</script>
+    <div>
+      <p>Name: {{ name }}</p>
+      <p>Salary: {{ salary }}</p>
+      <p>Age: {{ age }}</p>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    props: ['name', 'salary', 'age']
+  };
+  </script>
