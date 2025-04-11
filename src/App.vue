@@ -1,45 +1,26 @@
 <template>
   <div>
-    <Employee
-      v-for="user in users"
-      :key="user.id"
-      :name="user.name"
-      :salary="user.salary"
-      :age="user.age"
+    <ChildComponent 
+      :function1="function1" 
+      :function2="function2" 
     />
   </div>
 </template>
 
 <script>
-import Employee from './Employee.vue';
+import ChildComponent from './ChildComponent.vue';
 
 export default {
   components: {
-    Employee
+    ChildComponent
   },
-  data() {
-    return {
-      users: [
-        {
-          id: 1,
-          name: 'name1',
-          salary: 100,
-          age: 30
-        },
-        {
-          id: 2,
-          name: 'name2',
-          salary: 200,
-          age: 40
-        },
-        {
-          id: 3,
-          name: 'name3',
-          salary: 300,
-          age: 50
-        }
-      ]
-    };
+  methods: {
+    function1() {
+      alert("Function 1 called!");
+    },
+    function2() {
+      alert("Function 2 called!");
+    }
   }
 };
 </script>
